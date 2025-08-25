@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import Navbar from './assets/navbatr/navbar'
-import Home from './assets/home/home'
+import Navbar from './assets/Navbar/Navbar'
+import Home from './assets/Home/Home'
 import About from './assets/About/About'
 import Skills from './assets/Skills/Skills'
 import Contact from './assets/Contact/Contact'
