@@ -22,7 +22,8 @@ const Contact = () => {
                     </a>
 
                     <a
-                        href="https://linkedin.com/in/kunal-gurav-563b4275"
+                    
+                        href="https://linkedin.com/in/kunal-gurav-5636b4275"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-gray-400 transition-colors duration-300"
