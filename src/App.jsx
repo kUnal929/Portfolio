@@ -4,6 +4,7 @@ import Navbar from "./assets/Navbar/Navbar"
 import Home from './assets/Home/Home'
 import About from './assets/About/About'
 import Skills from './assets/Skills/Skills'
+import Projects from './assets/Projects/Projects'
 import Contact from './assets/Contact/Contact'
 import Footer from './assets/Footer/Footer'
 
@@ -37,6 +38,7 @@ function App() {
         <Home />
         <About />
         <Skills />
+        <Projects />
         <Contact />
       </main>
       <Footer />

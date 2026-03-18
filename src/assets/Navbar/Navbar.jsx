@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-const links = ["Home", "About", "Skills", "Contact"]
+const links = ["Home", "About", "Skills", "Projects", "Contact"]
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false)
