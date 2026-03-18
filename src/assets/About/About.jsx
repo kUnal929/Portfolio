@@ -27,15 +27,15 @@ const About = () => {
                 <p className="text-slate-400 text-base">Pillai HOC College of Engineering and Technology, Rasayani</p>
               </div>
               
-              <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-2.5 before:h-2.5 before:bg-slate-600 before:rounded-full before:ring-4 before:ring-[#1a1a1a]">
+              <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-2.5 before:h-2.5 before:bg-indigo-500 before:rounded-full before:ring-4 before:ring-[#1a1a1a]">
                 <h4 className="font-medium text-slate-200 text-lg lg:text-xl">HSC</h4>
-                <p className="text-slate-400 text-base font-medium mb-1 mt-1">2021</p>
+                <p className="text-indigo-400 text-base font-medium mb-1 mt-1">2021</p>
                 <p className="text-slate-400 text-base">S.P. Jain Junior College Nagothane</p>
               </div>
 
-              <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-2.5 before:h-2.5 before:bg-slate-600 before:rounded-full before:ring-4 before:ring-[#1a1a1a]">
+              <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:w-2.5 before:h-2.5 before:bg-indigo-500 before:rounded-full before:ring-4 before:ring-[#1a1a1a]">
                 <h4 className="font-medium text-slate-200 text-lg lg:text-xl">SSC</h4>
-                <p className="text-slate-400 text-base font-medium mb-1 mt-1">2019</p>
+                <p className="text-indigo-400 text-base font-medium mb-1 mt-1">2019</p>
                 <p className="text-slate-400 text-base">K.E.S G.R. Agrawal Vidyamandir Nagothane</p>
               </div>
             </div>

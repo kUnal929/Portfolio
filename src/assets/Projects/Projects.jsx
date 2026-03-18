@@ -48,7 +48,7 @@ const Projects = () => {
   return (
     <section id="Projects" className="observe-section max-w-7xl mx-auto px-6 py-16 border-t border-slate-800/50">
       <div className="mb-16 text-center">
-        <h2 className="text-4xl font-bold text-white mb-2">Featured Projects</h2>
+        <h2 className="text-4xl font-bold text-white mb-2"> Projects</h2>
       </div>
 
       <div className="flex flex-col gap-16">
