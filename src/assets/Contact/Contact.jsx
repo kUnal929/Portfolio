@@ -28,7 +28,7 @@ const Contact = () => {
           <FaLinkedin size={36} />
         </a>
         <a
-          href="mailto:kunalgurav1359@gmail.com"
+          href="mailto:kunalgurav1357@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-slate-400 hover:text-red-400 transition-colors duration-300 transform hover:-translate-y-1"

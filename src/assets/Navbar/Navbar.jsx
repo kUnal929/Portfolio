@@ -7,7 +7,12 @@ const Nav = () => {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+      if (window.scrollY > 40) {
+        setMenuOpen(false) 
+      }
+    }
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
@@ -20,9 +25,9 @@ const Nav = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#1a1a1a]/90 backdrop-blur-md border-b border-slate-800"
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled || menuOpen
+          ? "bg-[#1a1a1a]/95 backdrop-blur-md border-b border-slate-800"
           : "bg-transparent"
       }`}
     >
@@ -71,7 +76,7 @@ const Nav = () => {
       {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 bg-[#1a1a1a] border-b border-slate-800 ${
-          menuOpen ? "max-h-64 py-4" : "max-h-0"
+          menuOpen ? "max-h-[400px] py-6" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col gap-1 px-6">
