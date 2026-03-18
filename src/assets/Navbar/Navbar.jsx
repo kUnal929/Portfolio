@@ -1,69 +1,95 @@
+import React, { useState, useEffect } from "react"
 
-import React, { useState, useEffect } from "react";
+const links = ["Home", "About", "Skills", "Contact"]
 
 const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
-  // close the mobile menu when a link is clicked
-  const closeMenu = () => setMenuOpen(false);
-
-  // close the mobile menu if we resize to desktop
   useEffect(() => {
-    const onResize = () => window.innerWidth >= 768 && setMenuOpen(false);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
+    const onResize = () => { if (window.innerWidth >= 768) setMenuOpen(false) }
+    window.addEventListener("resize", onResize)
+    return () => window.removeEventListener("resize", onResize)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50">
-      <nav
-        className={`w-full text-white transition-all duration-300
-        ${isScrolled ? "bg-gray-800/80 backdrop-blur-lg shadow-md" : "bg-gray-800"}`}
-      >
-        {/* top row */}
-        <div className="flex justify-between items-center p-4 tracking-widest">
-          <span className="font-bold text-xl">Portfolio</span>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#1a1a1a]/90 backdrop-blur-md border-b border-slate-800"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#Home" className="text-3xl font-extrabold tracking-tight text-[#38BDF8] transition-colors hover:text-[#7DD3FC]">
+          Kunal Gurav
+        </a>
 
-          {/* hamburger */}
-          <button
-            className="md:hidden block text-2xl focus:outline-none"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
+        {/* Desktop links */}
+        <ul className="hidden md:flex items-center gap-10">
+          {links.map((l) => (
+            <li key={l}>
+              <a
+                href={`#${l}`}
+                className="text-xl font-medium text-slate-300 hover:text-white transition-colors duration-200"
+              >
+                {l}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-          {/* desktop menu */}
-          <ul className="hidden md:flex gap-10 text-xl font-bold">
-            <li><a href="#Home" className="hover:text-gray-400 transition-colors">Home</a></li>
-            <li><a href="#About" className="hover:text-gray-400 transition-colors">About</a></li>
-            <li><a href="#Skills" className="hover:text-gray-400 transition-colors">Skills</a></li>
-            <li><a href="#Contact" className="hover:text-gray-400 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* mobile dropdown (pushes content down) */}
-        <div
-          className={`md:hidden overflow-hidden transition-[max-height] duration-300
-          ${menuOpen ? "max-h-96" : "max-h-0"}`}
+        {/* Hamburger */}
+        <button
+          className="md:hidden text-slate-400 hover:text-white transition-colors p-1"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle menu"
         >
-          <ul className="flex flex-col gap-4 text-xl font-bold bg-gray-800 p-4 border-t border-gray-700">
-            <li><a href="#Home" onClick={closeMenu} className="hover:text-gray-400 transition-colors">Home</a></li>
-            <li><a href="#About" onClick={closeMenu} className="hover:text-gray-400 transition-colors">About</a></li>
-            <li><a href="#Skills" onClick={closeMenu} className="hover:text-gray-400 transition-colors">Skills</a></li>
-            <li><a href="#Contact" onClick={closeMenu} className="hover:text-gray-400 transition-colors">Contact</a></li>
-          </ul>
-        </div>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+            {menuOpen ? (
+              <>
+                <line x1="4" y1="4" x2="18" y2="18" />
+                <line x1="18" y1="4" x2="4" y2="18" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="6" x2="19" y2="6" />
+                <line x1="3" y1="11" x2="19" y2="11" />
+                <line x1="3" y1="16" x2="19" y2="16" />
+              </>
+            )}
+          </svg>
+        </button>
       </nav>
-    </header>
-  );
-};
 
-export default Nav;
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-[#1a1a1a] border-b border-slate-800 ${
+          menuOpen ? "max-h-64 py-4" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col gap-1 px-6">
+          {links.map((l) => (
+            <li key={l}>
+              <a
+                href={`#${l}`}
+                onClick={() => setMenuOpen(false)}
+                className="block py-4 text-2xl font-medium text-slate-300 hover:text-white transition-colors"
+              >
+                {l}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
+  )
+}
+
+export default Nav
