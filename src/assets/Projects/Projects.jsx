@@ -5,21 +5,21 @@ const projectsData = [
   {
     title: "URL Shortener",
     description: "Full-stack URL shortener application where users can sign up, shorten long URLs into custom codes, and manage their shortened links. Built for a complete end-to-end solution.",
-    tech: ["React", "Express.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS","REST API"],
+    tech: ["React.js", "Express.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS","REST API"],
     github: "https://github.com/kUnal929/URL-Shortener",
     liveUrl: "#", // placeholder
   },
   {
     title: "Books Store",
-    description: "Built a backend project for managing books and authors. Implemented CRUD features, input validation, error handling, and clear API documentation for local development and testing.",
-    tech: ["Node.js", "Express", "PostgreSQL", "Drizzle ORM","REST API"],
+    description: "Full-stack library management app built with React and Express.js. Features a responsive dark mode UI, PostgreSQL integration, complete CRUD operations, and REST API for seamless data synchronization.",
+    tech: ["Node.js", "Express.js", "PostgreSQL", "Drizzle ORM","React.js","Tailwind CSS","REST API"],
     github: "https://github.com/kUnal929/book-store",
     liveUrl: "#",
   },
   {
     title: "Basecamp Backend",
     description: "A RESTful API service designed to support collaborative project management. The system enables teams to organize projects, manage tasks with subtasks, maintain project notes, and handle user authentication with role-based access control.",
-    tech: ["Node.js", "Express","MongoDB", "REST API"],
+    tech: ["Node.js", "Express.js","MongoDB", "REST API"],
     github: "https://github.com/kUnal929/Basecamp-Project-Management",
     liveUrl: "#",
   },
