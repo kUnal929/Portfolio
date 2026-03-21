@@ -20,7 +20,7 @@ const Home = () => {
             Contact Me
           </a>
           <a
-            href="/kunal%20resume.pdf"
+            href="/kunal_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-40 h-14 text-lg font-medium text-slate-300 bg-slate-800/50 hover:bg-indigo-500/10 hover:text-white border border-indigo-500/40 hover:border-indigo-400 hover:shadow-[0_0_15px_rgba(99,102,241,0.3)] rounded-lg transition-all duration-300"
